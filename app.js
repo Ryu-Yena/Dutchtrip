@@ -328,6 +328,160 @@ function renderSettlement() {
 }
 
 
+// ================== Desktop: Login Screen ==================
+function renderDesktopLogin() {
+  var el = document.createElement('div');
+
+  el.innerHTML =
+    '<div style="min-height:100vh; display:flex; align-items:center; justify-content:center; background:var(--neutral-50);">' +
+      '<div style="width:400px; background:var(--neutral-0); border-radius:var(--radius-xl); border:1px solid var(--neutral-200); padding:48px 40px 40px; box-shadow:var(--shadow-md);">' +
+
+        '<div style="display:flex; flex-direction:column; align-items:center; margin-bottom:36px;">' +
+          '<div style="width:72px; height:72px; background:var(--brand-primary); border-radius:20px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 8px 28px rgba(26,43,74,0.22);">' +
+            '<svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2h-1A1.5 1.5 0 009 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L12 19v-5.5l9 2.5z"/></svg>' +
+          '</div>' +
+          '<div style="font-size:26px; font-weight:700; color:var(--brand-primary); letter-spacing:-0.5px;">Dutch-Trip</div>' +
+          '<div style="font-size:13px; color:var(--neutral-400); margin-top:6px;">여행 더치페이, 간편하게</div>' +
+        '</div>' +
+
+        '<div style="display:flex; gap:10px; margin-bottom:32px;">' +
+          '<div style="flex:1; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:16px 10px; display:flex; flex-direction:column; align-items:center; gap:6px;">' +
+            '<span style="font-size:20px;">🧾</span>' +
+            '<span style="font-size:11px; font-weight:700; color:var(--neutral-900);">지출 추가</span>' +
+            '<span style="font-size:10px; color:var(--neutral-400); text-align:center; line-height:1.4;">영수증 찍으면<br>자동 입력</span>' +
+          '</div>' +
+          '<div style="flex:1; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:16px 10px; display:flex; flex-direction:column; align-items:center; gap:6px;">' +
+            '<span style="font-size:20px;">🔗</span>' +
+            '<span style="font-size:11px; font-weight:700; color:var(--neutral-900);">초대 연동</span>' +
+            '<span style="font-size:10px; color:var(--neutral-400); text-align:center; line-height:1.4;">코드 하나로<br>팀 합류</span>' +
+          '</div>' +
+          '<div style="flex:1; background:var(--neutral-50); border:1px solid var(--neutral-200); border-radius:var(--radius-md); padding:16px 10px; display:flex; flex-direction:column; align-items:center; gap:6px;">' +
+            '<span style="font-size:20px;">💸</span>' +
+            '<span style="font-size:11px; font-weight:700; color:var(--neutral-900);">자동 정산</span>' +
+            '<span style="font-size:10px; color:var(--neutral-400); text-align:center; line-height:1.4;">정산 금액<br>자동 계산</span>' +
+          '</div>' +
+        '</div>' +
+
+        '<div style="display:flex; align-items:center; gap:12px; margin-bottom:20px;">' +
+          '<div style="flex:1; height:1px; background:var(--neutral-200);"></div>' +
+          '<span style="font-size:12px; color:var(--neutral-400); white-space:nowrap;">소셜 계정으로 시작하기</span>' +
+          '<div style="flex:1; height:1px; background:var(--neutral-200);"></div>' +
+        '</div>' +
+
+        '<div style="display:flex; flex-direction:column; gap:10px;">' +
+          '<button id="desk-kakao-btn" style="display:flex; align-items:center; justify-content:center; gap:10px; height:52px; border-radius:var(--radius-md); font-size:15px; font-weight:600; width:100%; background:#FEE500; color:#191919; border:none; cursor:pointer;">' +
+            '<svg width="20" height="20" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.7 5.1 4.3 6.5L5.2 21l4.9-2.6c.6.1 1.3.1 1.9.1 5.523 0 10-3.477 10-7.8C22 6.477 17.523 3 12 3z"/></svg>' +
+            '카카오로 시작하기' +
+          '</button>' +
+          '<button id="desk-google-btn" style="display:flex; align-items:center; justify-content:center; gap:10px; height:52px; border-radius:var(--radius-md); font-size:15px; font-weight:600; width:100%; background:var(--neutral-0); color:var(--neutral-900); border:1px solid var(--neutral-200); cursor:pointer;">' +
+            '<svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>' +
+            'Google로 시작하기' +
+          '</button>' +
+        '</div>' +
+
+        '<div style="margin-top:20px; font-size:11px; color:var(--neutral-400); text-align:center; line-height:1.7;">' +
+          '가입 시 이용약관 및 개인정보처리방침에 동의하는 것으로 간주됩니다.' +
+        '</div>' +
+
+      '</div>' +
+    '</div>';
+
+  el.querySelector('#desk-kakao-btn').addEventListener('click', function() {
+    navigateDesk('expense');
+  });
+  el.querySelector('#desk-google-btn').addEventListener('click', function() {
+    navigateDesk('expense');
+  });
+
+  return el;
+}
+
+
+// ================== Desktop: Trip List Screen ==================
+function renderDesktopTrips() {
+  var el = document.createElement('div');
+
+  var totalExpense = 0;
+  EXPENSES.forEach(function(e) { totalExpense += e.amount; });
+  var perPerson = Math.floor(totalExpense / TRIP.members.length);
+  var pendingCount = SETTLEMENTS.filter(function(s) { return !s.checked; }).length;
+
+  el.innerHTML =
+    '<div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:28px;">' +
+      '<div>' +
+        '<div style="font-size:24px; font-weight:700; color:var(--neutral-900); margin-bottom:4px;">여행 목록</div>' +
+        '<div style="font-size:14px; color:var(--neutral-400);">총 ' + (TRIPS_LIST ? TRIPS_LIST.length : 2) + '개의 여행이 있어요</div>' +
+      '</div>' +
+      '<button id="desk-new-trip-btn" class="btn btn-primary" style="width:auto; padding:0 20px; height:44px; font-size:15px;">+ 새 여행 만들기</button>' +
+    '</div>' +
+
+    '<div style="display:flex; gap:8px; margin-bottom:24px;">' +
+      ['전체', '진행중', '정산중', '완료'].map(function(label, i) {
+        return '<div class="desk-filter-tab' + (i === 0 ? ' active' : '') + '" data-filter="' + label + '" style="padding:7px 18px; border-radius:var(--radius-full); font-size:13px; font-weight:500; cursor:pointer; border:1px solid ' + (i === 0 ? 'var(--brand-primary)' : 'var(--neutral-200)') + '; background:' + (i === 0 ? 'var(--brand-primary)' : 'var(--neutral-0)') + '; color:' + (i === 0 ? '#fff' : 'var(--neutral-400)') + ';">' + label + '</div>';
+      }).join('') +
+    '</div>' +
+
+    // 진행중인 여행 — 강조 카드
+    '<div id="desk-new-trip-btn2" style="background:var(--brand-primary); border-radius:var(--radius-lg); padding:28px 32px; margin-bottom:16px; cursor:pointer; display:flex; justify-content:space-between; align-items:center;" >' +
+      '<div>' +
+        '<div style="font-size:11px; font-weight:700; color:rgba(255,255,255,0.6); letter-spacing:.08em; margin-bottom:10px;">NOW · 진행중</div>' +
+        '<div style="font-size:22px; font-weight:700; color:#fff; margin-bottom:6px;">' + TRIP.title + ' 🏝</div>' +
+        '<div style="font-size:13px; color:rgba(255,255,255,0.55);">' + TRIP.startDate.replace(/-/g,'.') + ' – ' + TRIP.endDate.replace(/-/g,'.') + ' · 멤버 ' + TRIP.members.length + '명</div>' +
+        '<div style="display:flex; gap:32px; margin-top:20px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.12);">' +
+          '<div><div style="font-size:18px; font-weight:700; color:#fff;">' + fmt(totalExpense) + '원</div><div style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:3px;">총 지출</div></div>' +
+          '<div><div style="font-size:18px; font-weight:700; color:#fff;">' + fmt(perPerson) + '원</div><div style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:3px;">1인 평균</div></div>' +
+          '<div><div style="font-size:18px; font-weight:700; color:#fff;">' + EXPENSES.length + '건</div><div style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:3px;">지출 내역</div></div>' +
+          '<div><div style="font-size:18px; font-weight:700; color:' + (pendingCount > 0 ? '#f5a623' : '#22c27a') + ';">' + pendingCount + '건</div><div style="font-size:11px; color:rgba(255,255,255,0.45); margin-top:3px;">미정산</div></div>' +
+        '</div>' +
+      '</div>' +
+      '<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
+    '</div>' +
+
+    // 완료 여행 카드
+    '<div style="background:var(--neutral-0); border:1px solid var(--neutral-200); border-radius:var(--radius-lg); padding:20px 24px; display:flex; justify-content:space-between; align-items:center; opacity:0.65; cursor:pointer;" id="desk-trip-done">' +
+      '<div style="display:flex; align-items:center; gap:16px;">' +
+        '<div style="width:48px; height:48px; border-radius:var(--radius-md); background:var(--neutral-100); display:flex; align-items:center; justify-content:center; font-size:22px;">🏔</div>' +
+        '<div>' +
+          '<div style="display:flex; align-items:center; gap:8px; margin-bottom:4px;">' +
+            '<span style="font-size:16px; font-weight:700; color:var(--neutral-900);">강원도 설악산</span>' +
+            '<span style="font-size:11px; color:var(--neutral-400); background:var(--neutral-100); padding:3px 10px; border-radius:var(--radius-full);">완료</span>' +
+          '</div>' +
+          '<div style="font-size:13px; color:var(--neutral-400);">2025.05.03 – 2025.05.05 · 멤버 5명</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="display:flex; gap:32px; text-align:right;">' +
+        '<div><div style="font-size:15px; font-weight:700; color:var(--neutral-900);">685,000원</div><div style="font-size:11px; color:var(--neutral-400); margin-top:2px;">총 지출</div></div>' +
+        '<div><div style="font-size:15px; font-weight:700; color:var(--neutral-900);">137,000원</div><div style="font-size:11px; color:var(--neutral-400); margin-top:2px;">1인 평균</div></div>' +
+      '</div>' +
+    '</div>';
+
+  // 이벤트
+  el.querySelector('#desk-new-trip-btn').addEventListener('click', function() {
+    showToast('프로토타입에서는 지원하지 않는 기능입니다');
+  });
+  el.querySelector('#desk-new-trip-btn2').addEventListener('click', function() {
+    navigateDesk('expense');
+  });
+  el.querySelector('#desk-trip-done').addEventListener('click', function() {
+    showToast('완료된 여행입니다');
+  });
+  el.querySelectorAll('.desk-filter-tab').forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      el.querySelectorAll('.desk-filter-tab').forEach(function(t) {
+        t.style.background = 'var(--neutral-0)';
+        t.style.color = 'var(--neutral-400)';
+        t.style.borderColor = 'var(--neutral-200)';
+      });
+      tab.style.background = 'var(--brand-primary)';
+      tab.style.color = '#fff';
+      tab.style.borderColor = 'var(--brand-primary)';
+    });
+  });
+
+  return el;
+}
+
+
 // ================== Desktop: Expense List View ==================
 function renderDesktopExpense() {
   var el = document.createElement('div');
@@ -714,239 +868,10 @@ function renderDesktopSettlement() {
 }
 
 
-// ================== Mobile: Login Screen ==================
-function renderLogin() {
-  var el = document.createElement('div');
-  el.className = 'screen-login';
-
-  el.innerHTML =
-    '<div class="login-hero">' +
-      '<div class="login-logo-mark">' +
-        '<svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' +
-          '<path d="M21 16v-2l-8-5V3.5A1.5 1.5 0 0011.5 2h-1A1.5 1.5 0 009 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L12 19v-5.5l9 2.5z"/>' +
-        '</svg>' +
-      '</div>' +
-      '<div class="login-logo-text">Dutch-Trip</div>' +
-      '<div class="login-logo-sub">여행 더치페이, 간편하게</div>' +
-    '</div>' +
-
-    '<div class="login-feature-row">' +
-      '<div class="login-feature-card">' +
-        '<div class="login-feature-icon">🧾</div>' +
-        '<div class="login-feature-label">지출 추가</div>' +
-        '<div class="login-feature-desc">영수증 찍으면<br>자동 입력</div>' +
-      '</div>' +
-      '<div class="login-feature-card">' +
-        '<div class="login-feature-icon">🔗</div>' +
-        '<div class="login-feature-label">초대 연동</div>' +
-        '<div class="login-feature-desc">코드 하나로<br>팀 합류</div>' +
-      '</div>' +
-      '<div class="login-feature-card">' +
-        '<div class="login-feature-icon">💸</div>' +
-        '<div class="login-feature-label">자동 정산</div>' +
-        '<div class="login-feature-desc">정산 금액<br>자동 계산</div>' +
-      '</div>' +
-    '</div>' +
-
-    '<div class="login-divider">' +
-      '<div class="login-divider-line"></div>' +
-      '<span class="login-divider-text">소셜 계정으로 시작하기</span>' +
-      '<div class="login-divider-line"></div>' +
-    '</div>' +
-
-    '<div class="login-btn-area">' +
-      '<button class="btn-kakao" id="login-kakao-btn">' +
-        '<svg width="20" height="20" viewBox="0 0 24 24" fill="#191919"><path d="M12 3C6.477 3 2 6.477 2 10.8c0 2.7 1.7 5.1 4.3 6.5L5.2 21l4.9-2.6c.6.1 1.3.1 1.9.1 5.523 0 10-3.477 10-7.8C22 6.477 17.523 3 12 3z"/></svg>' +
-        '카카오로 시작하기' +
-      '</button>' +
-      '<button class="btn-google" id="login-google-btn">' +
-        '<svg width="18" height="18" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>' +
-        'Google로 시작하기' +
-      '</button>' +
-    '</div>' +
-
-    '<div class="login-terms">' +
-      '가입 시 <a href="#">이용약관</a> 및 <a href="#">개인정보처리방침</a>에<br>동의하는 것으로 간주됩니다.' +
-    '</div>';
-
-  el.querySelector('#login-kakao-btn').addEventListener('click', function() {
-    showToast('프로토타입에서는 지원하지 않는 기능입니다');
-  });
-  el.querySelector('#login-google-btn').addEventListener('click', function() {
-    showToast('프로토타입에서는 지원하지 않는 기능입니다');
-  });
-
-  return el;
-}
-
-
-// ================== Mobile: Trip List Screen ==================
-function renderTripList() {
-  var el = document.createElement('div');
-  el.className = 'screen-triplist';
-
-  var totalExpense = 0;
-  EXPENSES.forEach(function(e) { totalExpense += e.amount; });
-  var perPerson = Math.floor(totalExpense / TRIP.members.length);
-  var pendingCount = SETTLEMENTS.filter(function(s) { return !s.checked; }).length;
-
-  el.innerHTML =
-    // 헤더
-    '<div class="triplist-header">' +
-      '<div class="triplist-avatar">김</div>' +
-      '<div class="triplist-greeting">' +
-        '<div class="tg-sub">안녕하세요 👋</div>' +
-        '<div class="tg-name">' + CURRENT_USER.name + '님</div>' +
-      '</div>' +
-      '<div class="triplist-noti-btn" id="tl-noti-btn">' +
-        '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' +
-          '<path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/>' +
-          '<path d="M13.73 21a2 2 0 01-3.46 0"/>' +
-        '</svg>' +
-        '<div class="triplist-noti-dot"></div>' +
-      '</div>' +
-    '</div>' +
-
-    // 진행 중인 여행 배너
-    '<div class="active-trip-banner" id="atb-click">' +
-      '<div class="atb-top">' +
-        '<span class="atb-badge">NOW · 진행중</span>' +
-        '<div class="atb-arrow">›</div>' +
-      '</div>' +
-      '<div class="atb-title">' + TRIP.title + ' 🏝</div>' +
-      '<div class="atb-meta">' + TRIP.startDate.replace(/-/g, '.') + ' – ' + TRIP.endDate.replace(/-/g, '.') + ' · 멤버 ' + TRIP.members.length + '명</div>' +
-      '<div class="atb-stats">' +
-        '<div class="atb-stat"><div class="sv">' + fmt(totalExpense) + '원</div><div class="sl">총 지출</div></div>' +
-        '<div class="atb-vdivider"></div>' +
-        '<div class="atb-stat"><div class="sv">' + fmt(perPerson) + '원</div><div class="sl">1인 평균</div></div>' +
-        '<div class="atb-vdivider"></div>' +
-        '<div class="atb-stat"><div class="sv">' + EXPENSES.length + '건</div><div class="sl">지출 내역</div></div>' +
-      '</div>' +
-    '</div>' +
-
-    // 필터 탭
-    '<div class="filter-tabs-row">' +
-      '<div class="filter-tab-btn active" data-filter="all">전체</div>' +
-      '<div class="filter-tab-btn" data-filter="ongoing">진행중</div>' +
-      '<div class="filter-tab-btn" data-filter="settling">정산중</div>' +
-      '<div class="filter-tab-btn" data-filter="done">완료</div>' +
-    '</div>' +
-
-    // 여행 목록
-    '<div class="triplist-content">' +
-
-      // 새 여행 만들기
-      '<div class="new-trip-btn" id="new-trip-btn">' +
-        '<div class="new-trip-icon">' +
-          '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--brand-accent)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">' +
-            '<circle cx="12" cy="12" r="9"/><path d="M12 8v8M8 12h8"/>' +
-          '</svg>' +
-        '</div>' +
-        '<div class="new-trip-text">' +
-          '<div class="main">새 여행 만들기</div>' +
-          '<div class="sub">여행 이름, 날짜, 멤버를 설정해요</div>' +
-        '</div>' +
-        '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--neutral-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>' +
-      '</div>' +
-
-      // 여행 카드 1 — 정산중 (현재 진행 여행)
-      '<div class="trip-card" id="tc-jeju">' +
-        '<div class="trip-card-inner">' +
-          '<div class="trip-card-icon">🏝</div>' +
-          '<div class="trip-card-info">' +
-            '<div class="trip-card-top">' +
-              '<div class="trip-card-title">' + TRIP.title + '</div>' +
-              '<span class="trip-status-chip settling">정산중</span>' +
-            '</div>' +
-            '<div class="trip-card-meta">' + TRIP.startDate.replace(/-/g, '.') + ' – ' + TRIP.endDate.replace(/-/g, '.') + ' · 멤버 ' + TRIP.members.length + '명</div>' +
-            '<div class="trip-progress-row">' +
-              '<div class="trip-progress-track"><div class="trip-progress-fill" style="width:' + Math.round(((SETTLEMENTS.length - pendingCount) / SETTLEMENTS.length) * 100) + '%;"></div></div>' +
-              '<span class="trip-progress-label">' + (SETTLEMENTS.length - pendingCount) + '/' + SETTLEMENTS.length + ' 완료</span>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="trip-card-footer">' +
-          '<div class="tcf-item"><div class="tcf-label">총 지출</div><div class="tcf-value">' + fmt(totalExpense) + '원</div></div>' +
-          '<div class="tcf-divider"></div>' +
-          '<div class="tcf-item"><div class="tcf-label">1인 평균</div><div class="tcf-value">' + fmt(perPerson) + '원</div></div>' +
-          '<div class="tcf-divider"></div>' +
-          '<div class="tcf-item" style="display:flex;justify-content:flex-end;align-items:center;">' +
-            '<div class="member-stack">' +
-            TRIP.members.slice(0, 3).map(function(m) {
-              return '<div class="member-avatar-sm">' + m.name.charAt(0) + '</div>';
-            }).join('') +
-            (TRIP.members.length > 3 ? '<div class="member-avatar-sm">+' + (TRIP.members.length - 3) + '</div>' : '') +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-
-      // 여행 카드 2 — 완료
-      '<div class="trip-card" style="opacity:.6;" id="tc-gangwon">' +
-        '<div class="trip-card-inner">' +
-          '<div class="trip-card-icon">🏔</div>' +
-          '<div class="trip-card-info">' +
-            '<div class="trip-card-top">' +
-              '<div class="trip-card-title">강원도 설악산</div>' +
-              '<span class="trip-status-chip">완료</span>' +
-            '</div>' +
-            '<div class="trip-card-meta">2025.05.03 – 2025.05.05 · 멤버 5명</div>' +
-          '</div>' +
-        '</div>' +
-        '<div class="trip-card-footer">' +
-          '<div class="tcf-item"><div class="tcf-label">총 지출</div><div class="tcf-value">685,000원</div></div>' +
-          '<div class="tcf-divider"></div>' +
-          '<div class="tcf-item"><div class="tcf-label">1인 평균</div><div class="tcf-value">137,000원</div></div>' +
-          '<div class="tcf-divider"></div>' +
-          '<div class="tcf-item" style="display:flex;justify-content:flex-end;align-items:center;">' +
-            '<div class="member-stack">' +
-              '<div class="member-avatar-sm">민</div>' +
-              '<div class="member-avatar-sm">지</div>' +
-              '<div class="member-avatar-sm">현</div>' +
-              '<div class="member-avatar-sm">+2</div>' +
-            '</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-
-    '</div>';
-
-  // 이벤트 바인딩
-  el.querySelector('#atb-click').addEventListener('click', function() {
-    navigateMobile('expense');
-  });
-
-  el.querySelector('#new-trip-btn').addEventListener('click', function() {
-    showToast('프로토타입에서는 지원하지 않는 기능입니다');
-  });
-
-  el.querySelector('#tc-jeju').addEventListener('click', function() {
-    navigateMobile('settlement');
-  });
-
-  el.querySelector('#tc-gangwon').addEventListener('click', function() {
-    showToast('완료된 여행입니다');
-  });
-
-  el.querySelectorAll('.filter-tab-btn').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      el.querySelectorAll('.filter-tab-btn').forEach(function(b) { b.classList.remove('active'); });
-      btn.classList.add('active');
-    });
-  });
-
-  el.querySelector('#tl-noti-btn').addEventListener('click', function() {
-    showToast('프로토타입에서는 지원하지 않는 기능입니다');
-  });
-
-  return el;
-}
-
-
 // ================== Unified Router ==================
 var screenContainer = document.getElementById('screen-container');
 var desktopContent = document.getElementById('desktop-content');
-var currentRoute = 'login';
+var currentRoute = 'expense';
 
 function isDesktop() {
   return window.matchMedia('(min-width: 1024px)').matches;
@@ -954,8 +879,7 @@ function isDesktop() {
 
 // Mobile navigation
 function navigateMobile(route) {
-  var validRoutes = ['login', 'home', 'trips', 'expense', 'settlement'];
-  if (validRoutes.indexOf(route) === -1) return;
+  if (route !== 'expense' && route !== 'settlement') return;
   currentRoute = route;
 
   document.querySelectorAll('.tab-item:not(.disabled)').forEach(function(t) {
@@ -969,11 +893,7 @@ function navigateMobile(route) {
     var oldSticky = document.getElementById('expense-sticky-bottom');
     if (oldSticky) oldSticky.remove();
 
-    if (route === 'login') {
-      screenContainer.appendChild(renderLogin());
-    } else if (route === 'home' || route === 'trips') {
-      screenContainer.appendChild(renderTripList());
-    } else if (route === 'expense') {
+    if (route === 'expense') {
       var res = renderExpense();
       screenContainer.appendChild(res.screen);
       document.getElementById('app-container').appendChild(res.sticky);
@@ -987,10 +907,9 @@ function navigateMobile(route) {
 
 // Desktop navigation
 function navigateDesk(route) {
-  if (route !== 'expense' && route !== 'settlement') return;
+  if (route !== 'login' && route !== 'trips' && route !== 'expense' && route !== 'settlement') return;
   currentRoute = route;
 
-  // Update sidebar active
   document.querySelectorAll('.sidebar-item:not(.disabled)').forEach(function(el) {
     if (el.dataset.route === route) el.classList.add('active');
     else el.classList.remove('active');
@@ -999,7 +918,11 @@ function navigateDesk(route) {
   desktopContent.style.opacity = '0';
   setTimeout(function() {
     desktopContent.innerHTML = '';
-    if (route === 'expense') {
+    if (route === 'login') {
+      desktopContent.appendChild(renderDesktopLogin());
+    } else if (route === 'trips') {
+      desktopContent.appendChild(renderDesktopTrips());
+    } else if (route === 'expense') {
       desktopContent.appendChild(renderDesktopExpense());
     } else {
       desktopContent.appendChild(renderDesktopSettlement());
@@ -1016,11 +939,11 @@ document.querySelectorAll('.tab-item:not(.disabled)').forEach(function(tab) {
   });
 });
 
-// Desktop sidebar clicks
-document.querySelectorAll('.sidebar-item:not(.disabled)').forEach(function(item) {
-  item.addEventListener('click', function() {
-    if (isDesktop()) navigateDesk(item.dataset.route);
-  });
+// Desktop sidebar clicks — 이벤트 위임
+document.querySelector('.desktop-sidebar').addEventListener('click', function(e) {
+  var item = e.target.closest('.sidebar-item');
+  if (!item || item.classList.contains('disabled')) return;
+  if (isDesktop() && item.dataset.route) navigateDesk(item.dataset.route);
 });
 
 // Transitions
